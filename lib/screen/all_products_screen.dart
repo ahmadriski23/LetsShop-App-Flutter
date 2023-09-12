@@ -23,13 +23,13 @@ class _AllProductsScreenState extends State<AllProductsScreen> {
           ),
         ),
         body: SafeArea(
-          child: Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Expanded(
+          child: ListView(children: [
+            Padding(
+                padding: const EdgeInsets.all(15.0),
                 child: GridView.builder(
                     shrinkWrap: true,
                     physics: const ScrollPhysics(),
-                    itemCount: productsList.length - 2,
+                    itemCount: productsList.length,
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                             childAspectRatio: 9 / 15,
@@ -165,8 +165,8 @@ class _AllProductsScreenState extends State<AllProductsScreen> {
                           ),
                         ),
                       );
-                    }),
-              )),
+                    })),
+          ]),
         ));
   }
 }
